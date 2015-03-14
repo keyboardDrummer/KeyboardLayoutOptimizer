@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5643762F-7CF4-4ECD-AA96-71C814A71D95}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Generic</RootNamespace>
+    <AssemblyName>Generic</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\Generic.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\Generic.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations">
+      <HintPath>Resources\JetBrains.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Build.Conversion.v4.0" />
+    <Reference Include="nunit.framework">
+      <HintPath>Resources\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Concurrency\QueueWorker.cs" />
+    <Compile Include="Concurrency\Safe.cs" />
+    <Compile Include="Containers\Collections\Enumerables\EnumerableEqualityComparer.cs" />
+    <Compile Include="Containers\Collections\ForwardLinkedList\Empty.cs" />
+    <Compile Include="Containers\Collections\ForwardLinkedList\Cons.cs" />
+    <Compile Include="Containers\Collections\ForwardLinkedList\FowardList.cs" />
+    <Compile Include="Containers\Collections\ForwardLinkedList\ForwardListUtil.cs" />
+    <Compile Include="Common\Memory.cs" />
+    <Compile Include="Common\Comparer.cs" />
+    <Compile Include="Common\EqualityComparer.cs" />
+    <Compile Include="Common\HashUtil.cs" />
+    <Compile Include="Common\PointerEqualityComparer.cs" />
+    <Compile Include="Containers\Tables\Table.cs" />
+    <Compile Include="DebugUtil.cs" />
+    <Compile Include="InputOutput\Printing\IncrementalSizing\IncrementalSizer.cs" />
+    <Compile Include="InputOutput\UI\DocumentViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Maths\Vectors\FloatVector3.cs" />
+    <Compile Include="Maths\Vectors\IntVector3.cs" />
+    <Compile Include="Containers\Pairs\IPair.cs" />
+    <Compile Include="Containers\Pairs\Pair.cs" />
+    <Compile Include="InputOutput\UI\BitmapUtil.cs" />
+    <Compile Include="Cloneables\CloneableUtil.cs" />
+    <Compile Include="Cloneables\IGenCloneable1.cs" />
+    <Compile Include="Containers\Collections\List\DefaultBindingList.cs" />
+    <Compile Include="Containers\Collections\List\Final\FixedSizeList.cs" />
+    <Compile Include="InputOutput\Parsers\ParserSpecs\Bind.cs" />
+    <Compile Include="InputOutput\Parsers\ParserSpecs\Failure.cs" />
+    <Compile Include="InputOutput\Parsers\ParserSpecs\ParserSpec.cs" />
+    <Compile Include="InputOutput\Parsers\ParserSpecs\Many.cs" />
+    <Compile Include="InputOutput\Parsers\ParserSpecs\Or.cs" />
+    <Compile Include="InputOutput\Parsers\ParserSpecs\ParserSpecImplementation.cs" />
+    <Compile Include="InputOutput\Parsers\ParserSpecs\ParserUtil.cs" />
+    <Compile Include="InputOutput\Parsers\ParserSpecs\Return.cs" />
+    <Compile Include="InputOutput\Parsers\ParserSpecs\StreamParserSpecImplementation.cs" />
+    <Compile Include="InputOutput\Parsers\ParserSpecs\Success.cs" />
+    <Compile Include="InputOutput\UI\Pixel.cs" />
+    <Compile Include="Common\DefaultObject.cs" />
+    <Compile Include="Containers\Eithers\Left.cs" />
+    <Compile Include="Containers\Eithers\Right.cs" />
+    <Compile Include="Merge\Sets\Add.cs" />
+    <Compile Include="Merge\Sets\Change.cs" />
+    <Compile Include="Merge\Sets\ConflictGraph.cs" />
+    <Compile Include="Merge\Sets\Remove.cs" />
+    <Compile Include="Merge\Sets\SetMergeMergeable.cs" />
+    <Compile Include="StringUtil.cs" />
+    <Compile Include="Uncommon\HillClimberAlgorithm.cs" />
+    <Compile Include="InputOutput\Printing\DocumentUtil.cs" />
+    <Compile Include="Containers\Pointers\PointerUtil.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="InputOutput\Serialize.cs" />
+    <Compile Include="Common\Unit.cs" />
+    <Compile Include="Containers\Collections\Collection\DefaultCollection.cs" />
+    <Compile Include="Containers\Collections\Collection\DefaultReadOnlyCollection.cs" />
+    <Compile Include="Containers\Collections\List\Final\DivideInfinite.cs" />
+    <Compile Include="Containers\Collections\List\Final\TakeInfinite.cs" />
+    <Compile Include="Containers\Collections\List\Final\Zip.cs" />
+    <Compile Include="Containers\Collections\List\ListFromEnumerable.cs" />
+    <Compile Include="Containers\Collections\List\ListWrapper.cs" />
+    <Compile Include="Containers\Collections\Enumerables\Diagonalizes.cs" />
+    <Compile Include="Containers\Collections\Enumerables\DiagonalizeTwoEnumerable.cs" />
+    <Compile Include="Containers\Collections\List\Final\DiagonalizeEnumerable.cs" />
+    <Compile Include="Containers\Collections\List\Final\DiagonalizeTwo.cs" />
+    <Compile Include="Containers\Collections\List\FromInt.cs" />
+    <Compile Include="Containers\Collections\List\HoldHands.cs" />
+    <Compile Include="Containers\Collections\List\InfiniteIntertwine.cs" />
+    <Compile Include="Containers\Collections\List\Repeat.cs" />
+    <Compile Include="Containers\Collections\List\ShakeHands.cs" />
+    <Compile Include="Containers\Collections\Enumerables\DefaultEnumerable.cs" />
+    <Compile Include="Containers\Collections\Enumerables\EnumerableWrapper.cs" />
+    <Compile Include="Containers\Collections\Enumerables\FromEnumeratorFunc.cs" />
+    <Compile Include="Containers\Collections\Enumerables\NamedEnumerable.cs" />
+    <Compile Include="Containers\Collections\Enumerables\Transform.cs" />
+    <Compile Include="Containers\Collections\Enumerators\Distinct.cs" />
+    <Compile Include="Containers\Collections\Enumerators\Filter.cs" />
+    <Compile Include="Containers\Collections\Enumerators\Flatten.cs" />
+    <Compile Include="Containers\Collections\List\Concat.cs" />
+    <Compile Include="Containers\Collections\List\Divide.cs" />
+    <Compile Include="Containers\Collections\Enumerators\EnumeratorFromList.cs" />
+    <Compile Include="Containers\Collections\Enumerators\EnumeratorUtil.cs" />
+    <Compile Include="Containers\Collections\List\Final\Cons.cs" />
+    <Compile Include="Containers\Collections\List\Final\Empty.cs" />
+    <Compile Include="Containers\Collections\List\Final\Singleton.cs" />
+    <Compile Include="Containers\Collections\List\FromToInt.cs" />
+    <Compile Include="Containers\Collections\Enumerators\From.cs" />
+    <Compile Include="Containers\Collections\Enumerators\Intertwine.cs" />
+    <Compile Include="Containers\Collections\Enumerators\Transform.cs" />
+    <Compile Include="Containers\Collections\List\ListFromEnumerator.cs" />
+    <Compile Include="Containers\Collections\List\Final\DefaultReadOnlyList.cs" />
+    <Compile Include="Containers\Collections\List\DefaultList.cs" />
+    <Compile Include="Containers\Collections\List\Drop.cs" />
+    <Compile Include="Containers\Collections\List\ListUtil.cs" />
+    <Compile Include="Containers\Collections\List\Final\Take.cs" />
+    <Compile Include="Containers\Collections\List\Transform.cs" />
+    <Compile Include="Containers\Collections\Dictionaries\DictionaryUtil.cs" />
+    <Compile Include="Containers\Collections\Set\DefaultReadOnlySet.cs" />
+    <Compile Include="Containers\Collections\Set\DefaultSet.cs" />
+    <Compile Include="Containers\Collections\Set\Difference.cs" />
+    <Compile Include="Containers\Collections\Set\Intersection.cs" />
+    <Compile Include="Containers\Collections\Set\SelectDisjunct.cs" />
+    <Compile Include="Containers\Collections\Set\SetUtil.cs" />
+    <Compile Include="Containers\Collections\Set\Union.cs" />
+    <Compile Include="Containers\Collections\TestCollections.cs" />
+    <Compile Include="Containers\Eithers\Either.cs" />
+    <Compile Include="InputOutput\Printing\Sizable\DocumentWriter.cs" />
+    <Compile Include="InputOutput\Printing\Sized\SizedEmpty.cs" />
+    <Compile Include="InputOutput\Printing\Sizable\LeftRight.cs" />
+    <Compile Include="InputOutput\Printing\Sizable\TopBottom.cs" />
+    <Compile Include="InputOutput\Printing\Sizable\WrappedDocument.cs" />
+    <Compile Include="InputOutput\Printing\Sized\SizedLeftRight.cs" />
+    <Compile Include="InputOutput\Printing\Sized\SizedDocument.cs" />
+    <Compile Include="InputOutput\Printing\Sized\Text.cs" />
+    <Compile Include="InputOutput\Printing\Sized\SizedTopBottom.cs" />
+    <Compile Include="InputOutput\Printing\Sized\WhiteSpace.cs" />
+    <Compile Include="InputOutput\Printing\Sizable\WrappedList.cs" />
+    <Compile Include="Containers\Pointers\IPointer.cs" />
+    <Compile Include="Uncommon\Merge\IMerger.cs" />
+    <Compile Include="Uncommon\Merge\Maybes\Changed.cs" />
+    <Compile Include="Uncommon\Merge\Maybes\Deleted.cs" />
+    <Compile Include="Uncommon\Merge\Maybes\IMaybeChange.cs" />
+    <Compile Include="Uncommon\Merge\Maybes\MaybeMerge.cs" />
+    <Compile Include="Uncommon\Merge\Maybes\New.cs" />
+    <Compile Include="Uncommon\Merge\Maybes\NoChange.cs" />
+    <Compile Include="Uncommon\Merge\IConflictGraph.cs" />
+    <Compile Include="Uncommon\Merge\IMergeable.cs" />
+    <Compile Include="Uncommon\Merge\Sets\ISetChange.cs" />
+    <Compile Include="Uncommon\Merge\Sets\SetMerge.cs" />
+    <Compile Include="InputOutput\UI\MoveBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InputOutput\UI\MoveBar.Designer.cs">
+      <DependentUpon>MoveBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Cached.cs" />
+    <Compile Include="Functions\FuncUtil.cs" />
+    <Compile Include="Maths\Angle.cs" />
+    <Compile Include="Maths\LinearDistribution.cs" />
+    <Compile Include="Containers\Maybes\IMaybe.cs" />
+    <Compile Include="Containers\Maybes\Just.cs" />
+    <Compile Include="Containers\Maybes\MaybeUtil.cs" />
+    <Compile Include="Containers\Maybes\Nothing.cs" />
+    <Compile Include="Maths\Vectors\DoubleVector2.cs" />
+    <Compile Include="Maths\Lines\BoundedVertical.cs" />
+    <Compile Include="Maths\Lines\IBoundedLine.cs" />
+    <Compile Include="Maths\Lines\ILine.cs" />
+    <Compile Include="Maths\Lines\IVertical.cs" />
+    <Compile Include="Maths\Lines\Line.cs" />
+    <Compile Include="Maths\Lines\BoundedLine.cs" />
+    <Compile Include="Maths\Lines\LineUtil.cs" />
+    <Compile Include="Maths\Lines\INonVertical.cs" />
+    <Compile Include="Maths\Lines\TwoPointBoundedLine.cs" />
+    <Compile Include="Maths\Lines\Vertical.cs" />
+    <Compile Include="Maths\Polygon.cs" />
+    <Compile Include="InputOutput\MyStreamReader.cs" />
+    <Compile Include="Common\ObjectUtil.cs" />
+    <Compile Include="InputOutput\Parsers\Fail.cs" />
+    <Compile Include="InputOutput\Parsers\IBind.cs" />
+    <Compile Include="InputOutput\Parsers\IOr.cs" />
+    <Compile Include="InputOutput\Parsers\ParserFuncs.cs" />
+    <Compile Include="InputOutput\Parsers\ListParsers\Bind.cs" />
+    <Compile Include="InputOutput\Parsers\ListParsers\CharParser.cs" />
+    <Compile Include="InputOutput\Parsers\ListParsers\ListParser.cs" />
+    <Compile Include="InputOutput\Parsers\ListParsers\ListParserUtil.cs" />
+    <Compile Include="InputOutput\Parsers\ListParsers\ListStream.cs" />
+    <Compile Include="InputOutput\Parsers\ListParsers\Or.cs" />
+    <Compile Include="InputOutput\Parsers\ListParsers\Return.cs" />
+    <Compile Include="InputOutput\Parsers\MapResult.cs" />
+    <Compile Include="InputOutput\Parsers\ParseResult.cs" />
+    <Compile Include="InputOutput\Parsers\ParserWrapper.cs" />
+    <Compile Include="InputOutput\Parsers\StreamReaders\CharParser.cs" />
+    <Compile Include="InputOutput\Parsers\LazyParser.cs" />
+    <Compile Include="InputOutput\Parsers\ParseException.cs" />
+    <Compile Include="InputOutput\Parsers\ParserUtil.cs" />
+    <Compile Include="InputOutput\Parsers\StreamReaders\Bind.cs" />
+    <Compile Include="InputOutput\Parsers\StreamReaders\Many.cs" />
+    <Compile Include="InputOutput\Parsers\StreamReaders\Return.cs" />
+    <Compile Include="InputOutput\Parsers\StreamReaders\StreamParser.cs" />
+    <Compile Include="InputOutput\Parsers\StreamReaders\Or.cs" />
+    <Compile Include="InputOutput\Parsers\StreamReaders\StreamParserUtil.cs" />
+    <Compile Include="InputOutput\Parsers\StreamReaders\Word.cs" />
+    <Compile Include="Containers\Pointers\Pointer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Reflections.cs" />
+    <Compile Include="InputOutput\UI\ResizeButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InputOutput\UI\ResizeButton.Designer.cs">
+      <DependentUpon>ResizeButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputOutput\UI\Switch.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InputOutput\UI\Switch.Designer.cs">
+      <DependentUpon>Switch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InputOutput\Parsers\Parser.cs" />
+    <Compile Include="Uncommon\BackGroundThread.cs" />
+    <Compile Include="Containers\Collections\Enumerators\DefaultEnumerator.cs" />
+    <Compile Include="Containers\Collections\Enumerators\IntertwineList.cs" />
+    <Compile Include="Containers\Collections\List\Final\Diagonalize.cs" />
+    <Compile Include="Maths\FloatMath.cs" />
+    <Compile Include="Maths\Vectors\FloatVector2.cs" />
+    <Compile Include="InputOutput\Printing\Sizable\Document.cs" />
+    <Compile Include="Common\General.cs" />
+    <Compile Include="Graphs\Algorithm\BreadthFirst.cs" />
+    <Compile Include="Graphs\Algorithm\INode.cs" />
+    <Compile Include="Graphs\DominanceGraph.cs" />
+    <Compile Include="Graphs\DominanceTree.cs" />
+    <Compile Include="Graphs\Graph.cs" />
+    <Compile Include="Containers\Collections\Enumerables\EnumerableUtil.cs" />
+    <Compile Include="Cloneables\IGenClonable.cs" />
+    <Compile Include="Maths\Vectors\IVector.cs" />
+    <Compile Include="InputOutput\Printing\Sizable\IPrintable.cs" />
+    <Compile Include="Maths\GenMath.cs" />
+    <Compile Include="Containers\Maybes\Maybe.cs" />
+    <Compile Include="Functions\Partial.cs" />
+    <Compile Include="Containers\Collections\PartnerSet.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Maths\Vectors\IntVector2.cs" />
+    <Compile Include="Containers\Collections\Tree\BinaryTree.cs" />
+    <Compile Include="Containers\Collections\Tree\Tree.cs" />
+    <Compile Include="Common\UnreachableException.cs" />
+    <Compile Include="UnreachableException.cs" />
+    <Compile Include="XmlSchema\ComplexType.cs" />
+    <Compile Include="XmlSchema\SchemaElement.cs" />
+    <Compile Include="XmlSchema\SchemaGroupBase.cs" />
+    <Compile Include="XmlSchema\SchemaParticle.cs" />
+    <Compile Include="XmlSchema\SchemaSequence.cs" />
+    <Compile Include="XmlSchema\SchemaType.cs" />
+    <Compile Include="XmlSchema\SimpleType.cs" />
+    <Compile Include="XmlSchema\XmlPrimitiveType.cs" />
+    <Compile Include="XmlSchema\Schema.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="InputOutput\UI\MoveBar.resx">
+      <DependentUpon>MoveBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputOutput\UI\ResizeButton.resx">
+      <DependentUpon>ResizeButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputOutput\UI\Switch.resx">
+      <DependentUpon>Switch.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\feature_resize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feature_resize2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feature_resize21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Graphs\Algorithm\NHillClimber\" />
+    <Folder Include="Merge\Lists\" />
+    <Folder Include="Merge\MergeDevelopmentLines\" />
+    <Folder Include="Uncommon\Merge\Lists\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
